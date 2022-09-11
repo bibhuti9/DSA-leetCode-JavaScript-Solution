@@ -4,7 +4,7 @@ https://leetcode.com/problems/valid-parentheses/
 
 */
 
-/*  TIME COMPLEXITY IS O(logn) */
+/*  TIME COMPLEXITY IS O(N) */
 /*
 Example 1:
 
@@ -54,5 +54,4 @@ var isValid = function (s) {
     }
     return contain.length > 0 ? "false" : "true";
 };
-var str = "()";
-console.log(isValid(str));
+console.log(isValid("({"));
