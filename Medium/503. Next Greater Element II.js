@@ -4,25 +4,21 @@
  */
 
 
-
-function findMax(currentElement, arr) {
-    for (let i = 0; i < arr.length; i++) {
-        if (currentElement < arr[i]) {
-            return arr[i];
+var nextGreaterElements = function (nums) {
+    var stack = [];
+    for (let i = nums.length - 1; i > 0; i--) {
+        stack.push(nums[i]);
+    }
+    for (let i = 0; i < nums.length; i++) {
+        while (stack[stack.length - 1] <= nums[i]) {
+            stack.pop();
+        }
+        if (stack.length <= 0) {
+            nums[i] = -1;
+        } else {
+            nums[i] = stack[stack.length - 1];
         }
     }
-    return -1;
-}
-var nextGreaterElements = function (nums) {
-    let ansArr = [];
-    for (let i = 0; i < nums.length; i++) {
-        ansArr.push(findMax(nums[i], nums));
-    }
-    return ansArr;
+    console.log(nums);
 };
-console.log(nextGreaterElements([1, 5, 3, 6, 8]));
-
-// [1, 2, 3, 5,4, 3]=[1, 2, 3, 4, 3  1, 2, 3, 4, 3]
-// [1, 2, 1] = [1, 2, 1  1, 2, 1]
-// [1, 2, 3, 2, 1] = [1, 2, 3, 2, 1  1, 2, 3, 2, 1]
-// [5,4,3,2,1] = [5,4,3,2,1  5,4,3,2,1]
+nextGreaterElements([1, 2, 1]);

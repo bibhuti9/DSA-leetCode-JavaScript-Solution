@@ -52,4 +52,4 @@ function NextGreaterElement(arr) {
     }
     console.log(map);
 }
-NextGreaterElement([1, 2, 1]);
+NextGreaterElement([1, 3, 4, 2]);

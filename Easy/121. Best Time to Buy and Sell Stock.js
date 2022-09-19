@@ -31,6 +31,8 @@ var maxProfit2 = function (prices) {
     return maxProfit;
 }
 
+// [3,3,5,0,0,3,1,4]
+
 /*Method 2 */
 /*  TIME COMPLEXITY O(N2) */
 
@@ -48,4 +50,4 @@ var maxProfit1 = function (prices) {
     return max;
 
 }
-console.log(maxProfit2([7, 1, 5, 3, 6, 4]));
+console.log(maxProfit2([3, 3, 5, 0, 0, 3, 1, 4]));
