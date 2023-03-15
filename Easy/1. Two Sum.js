@@ -35,16 +35,11 @@ Output: [0,1]
  * @return {number[]}
  */
 var twoSum = function (nums, target) {
-    var s = 0;  //initilize a pointer to 0
-    for (let i = 1; i < nums.length; i++) { //itterate 1 to length
+    return nums.map((s,i)=>{
         if ((nums[s] + nums[i]) == target) {    //check the pointer is equal to the target number or not
             return [s, i];  //return if both sum are equal to the target
         }
-        if (i == nums.length - 1) { //if i equal to the length-1 then reinitilize it's to s+1
-            i = s + 1;
-            s++;
-        }
-    }
+    })
 }
 var nums = [3, 2, 4], target = 6;
 console.log(twoSum(nums, target));
